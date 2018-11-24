@@ -15,7 +15,11 @@ class Application
       search_term = req.params["q"]
       resp.write handle_search(search_term)
     elsif req.path.match(/add/)
-      #dostuff
+      added_item = req.params
+      #is the item in @@items?
+    if  @@items.detect { |x| x == added_item}
+    else
+      resp.write "This item does not exist.\n"
     elsif req.path.match(/cart/)
       if @@cart.empty?
         resp.write "Your cart is empty."
