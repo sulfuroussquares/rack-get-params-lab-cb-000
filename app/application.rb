@@ -21,6 +21,7 @@ class Application
         @@cart.each do |cartitem|
           resp.write "#{cartitem}\n"
         end
+      end
 
       end
     else
