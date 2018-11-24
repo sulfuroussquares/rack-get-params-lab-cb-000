@@ -20,7 +20,7 @@ class Application
     if  @@items.detect { |x| x == added_item} != nil
       @@cart << added_item
       resp.write "#added {added_item}"
-    else
+    #else
       resp.write "This item does not exist.\n"
     end
     elsif req.path.match(/cart/)
