@@ -21,7 +21,7 @@ class Application
       @@cart << added_item
       resp.write "added #{added_item}"
     else
-      resp.write "This item does not exist.\n"
+      resp.write "We don't have that iem\n"
     end
     elsif req.path.match(/cart/)
       if @@cart.empty?
