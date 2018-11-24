@@ -17,7 +17,7 @@ class Application
     elsif req.path.match(/add/)
       added_item = req.params
       #is the item in @@items?
-    if  @@items.detect { |x| x == added_item}
+    if  @@items.detect { |x| x == added_item} != nil
       @@cart << added_item
       resp.write "#added {added_item}"
     else
