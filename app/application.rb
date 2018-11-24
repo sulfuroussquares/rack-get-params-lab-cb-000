@@ -15,7 +15,7 @@ class Application
       search_term = req.params["q"]
       resp.write handle_search(search_term)
     elsif req.path.match(/add/)
-      added_item = req.params
+      added_item = req.params[item]
       #is the item in @@items?
     if  @@items.detect { |x| x == added_item} != nil
       @@cart << added_item
