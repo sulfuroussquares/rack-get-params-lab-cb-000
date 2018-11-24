@@ -20,6 +20,7 @@ class Application
     if  @@items.detect { |x| x == added_item}
     else
       resp.write "This item does not exist.\n"
+    end
     elsif req.path.match(/cart/)
       if @@cart.empty?
         resp.write "Your cart is empty."
